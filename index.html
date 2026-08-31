@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohini K S — Aspiring Software Engineer</title>
+  <meta name="description" content="Portfolio of Rohini K S, AI &amp; Data Science student and aspiring Software Engineer." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Full-page background canvas: neural network + light shafts -->
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <a href="#home" class="nav-logo">rohini k s<span class="cursor">_</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home"         class="nav-link active" data-section="home">home</a>
+      <a href="#about"        class="nav-link" data-section="about">about</a>
+      <a href="#skills"       class="nav-link" data-section="skills">skills</a>
+      <a href="#experience"   class="nav-link" data-section="experience">experience</a>
+      <a href="#projects"     class="nav-link" data-section="projects">projects</a>
+      <a href="#achievements" class="nav-link" data-section="achievements">achievements</a>
+      <a href="#resume"       class="nav-link" data-section="resume">resume</a>
+      <a href="#contact"      class="nav-link" data-section="contact">contact</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text fade-in">
+        <p class="eyebrow hero-eyebrow mono">
+        <h1 class="hero-name">Rohini K S</h1>
+        <p class="hero-title mono">
+          <span id="typedTitle"></span><span class="type-cursor">|</span>
+        </p>
+        <p class="hero-tagline">
+           Most of what I've learned about AI<br>
+           came from things that didn't work the first time.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="resume.pdf" download class="btn btn-outline">
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge"><i class="fa-solid fa-location-dot"></i> Tamil Nadu, India</span>
+          <span class="badge"><i class="fa-solid fa-graduation-cap"></i> B.Tech AI &amp; DS · 2027</span>
+          <span class="badge"><i class="fa-solid fa-star"></i> CGPA 8.92</span>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap fade-in">
+        <div class="hero-glow-ring"></div>
+        <div class="hero-photo-frame">
+          <img src="profile.jpeg" alt="Portrait of Rohini K S" class="hero-photo" />
+          <div class="scan-line"></div>
+        </div>
+        <div class="hero-photo-tag mono">status: <span class="ok">open_to_work</span></div>
+      </div>
+    </div>
+
+    <!-- Floating quick-stats strip -->
+    <div class="hero-strip fade-in">
+      <div class="strip-item">
+        <span class="strip-val mono" data-count="8.92" data-decimals="2">0</span>
+        <span class="strip-label">CGPA</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <span class="strip-val mono" data-count="4" data-decimals="0">0</span>
+        <span class="strip-label">Projects</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <span class="strip-val mono" data-count="3" data-decimals="0">0</span>
+        <span class="strip-label">Certifications</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <span class="strip-val mono" data-count="2027" data-decimals="0">0</span>
+        <span class="strip-label">Graduation</span>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <h2 class="section-title fade-in">About Me</h2>
+    <div class="about-grid">
+      <div class="about-text-col fade-in">
+        <p class="about-text">
+          I'm a final-year <strong>B.Tech Artificial Intelligence &amp; Data Science</strong>
+          student at <strong>Dr. Mahalingam College of Engineering and Technology, Pollachi</strong>.
+          I like working at the intersection of machine learning and practical
+          software — turning models for OCR, computer vision, and audio processing into tools
+          that actually ship.
+        </p>
+        <p class="about-text" style="margin-top: 16px;">
+          My goal is to grow into a <strong>Software Engineer</strong> role
+          where I can build production-grade systems, not just notebooks: solid APIs, clean
+          architecture, and ML that survives contact with real users.
+        </p>
+        <div class="traits-grid">
+          <div class="trait-card">
+            <i class="fa-solid fa-microscope"></i>
+            <h4>Research-Minded</h4>
+            <p>I dig into papers, replicate results, then strip away complexity to what's needed.</p>
+          </div>
+          <div class="trait-card">
+            <i class="fa-solid fa-ship"></i>
+            <h4>Ships It</h4>
+            <p>From prototype notebook to FastAPI endpoint — I stay with a project until it runs.</p>
+          </div>
+          <div class="trait-card">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <h4>Data-First</h4>
+            <p>Every decision starts with looking at the data — I don't trust assumptions I can check.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-stats fade-in">
+        <div class="stat-card">
+          <span class="stat-value mono" data-count="8.92" data-decimals="2">8.92</span>
+          <span class="stat-label">CGPA / 10</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value mono" data-count="4" data-decimals="0">4+</span>
+          <span class="stat-label">ML / CV Projects</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value mono" data-count="2027" data-decimals="0">2027</span>
+          <span class="stat-label">Expected Graduation</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value mono" data-count="3" data-decimals="0">3</span>
+          <span class="stat-label">Certifications Earned</span>
+        </div>
+        <div class="terminal-widget">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title mono">rohini@dev ~ learning</span>
+          </div>
+          <div class="terminal-body mono">
+            <p class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">currently exploring</span></p>
+            <p class="t-line t-output">▸ Docker &amp; System Design</p>
+            <p class="t-line t-output">▸ LLM Evalutaion &amp; Guardrails</p>
+            <p class="t-line"><span class="t-prompt">$</span> <span class="t-cursor-blink">█</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="section section-alt" id="skills">
+    <h2 class="section-title fade-in">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="skill-card-head"><i class="fa-solid fa-code"></i><h3>Languages</h3></div>
+        <div class="skill-tags">
+          <span>Java</span><span>Python</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-card-head"><i class="fa-solid fa-globe"></i><h3>Web</h3></div>
+        <div class="skill-tags">
+          <span>HTML5</span><span>CSS3</span><span>REST APIs</span><span>JSON</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-card-head"><i class="fa-solid fa-brain"></i><h3>ML / AI</h3></div>
+        <div class="skill-tags">
+          <span>scikit-learn</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>NLTK</span><span>LLMs</span><span>RAG</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-card-head"><i class="fa-solid fa-database"></i><h3>Databases</h3></div>
+        <div class="skill-tags">
+          <span>MySQL</span><span>MongoDB</span><span>SQLite</span><span>ChromaDB</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-card-head"><i class="fa-solid fa-toolbox"></i><h3>Tools &amp; Frameworks</h3></div>
+        <div class="skill-tags">
+          <span>FastAPI</span><span>Flask</span><span>OpenCV</span><span>YOLO</span>
+          <span>Tesseract OCR</span><span>Git</span><span>VS Code</span><span>LangChain</span><span>Hugging Face</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in skill-card-learning">
+        <div class="skill-card-head"><i class="fa-solid fa-rocket"></i><h3>Currently Learning</h3></div>
+        <div class="skill-tags">
+          <span class="learning-tag">Docker</span>
+          <span class="learning-tag">System Design</span>
+          <span class="learning-tag">LLM Evalutaion</span>
+          <span class="learning-tag">Guardrails</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proficiency fade-in">
+      <h3 class="proficiency-title">Proficiency</h3>
+      <div class="proficiency-row">
+        <span class="mono">Java</span>
+        <div class="bar"><div class="bar-fill" style="--pct:90%"></div></div>
+        <span class="mono bar-pct">90%</span>
+      </div>
+      
+      <div class="proficiency-row">
+        <span class="mono">Machine Learning</span>
+        <div class="bar"><div class="bar-fill" style="--pct:85%"></div></div>
+        <span class="mono bar-pct">85%</span>
+      </div>
+      <div class="proficiency-row">
+        <span class="mono">Computer Vision</span>
+        <div class="bar"><div class="bar-fill" style="--pct:82%"></div></div>
+        <span class="mono bar-pct">82%</span>
+      </div>
+      <div class="proficiency-row">
+        <span class="mono">Python</span>
+        <div class="bar"><div class="bar-fill" style="--pct:90%"></div></div>
+        <span class="mono bar-pct">75%%</span>
+      </div>
+      <div class="proficiency-row">
+        <span class="mono">Java</span>
+        <div class="bar"><div class="bar-fill" style="--pct:75%"></div></div>
+        <span class="mono bar-pct">75%</span>
+      </div>
+      <div class="proficiency-row">
+        <span class="mono">Backend (FastAPI / Flask)</span>
+        <div class="bar"><div class="bar-fill" style="--pct:70%"></div></div>
+        <span class="mono bar-pct">70%</span>
+      </div>
+      <div class="proficiency-row">
+        <span class="mono">SQL / Databases</span>
+        <div class="bar"><div class="bar-fill" style="--pct:68%"></div></div>
+        <span class="mono bar-pct">68%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="section" id="experience">
+    <h2 class="section-title fade-in">Education</h2>
+    <div class="experience-timeline">
+
+    
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="experience-card">
+            <div class="experience-head">
+              <div>
+                <h3>B.Tech — Artificial Intelligence &amp; Data Science</h3>
+                <p class="experience-org"><i class="fa-solid fa-university"></i> Dr. Mahalingam College of Engineering &amp; Technology, Pollachi</p>
+              </div>
+              <span class="experience-date mono">2023 – present</span>
+            </div>
+            <ul class="experience-list">
+              <li>Maintaining a CGPA of <strong>8.92 / 10</strong> across all semesters.</li>
+              <li>Coursework:Data Science, Machine Learning, Deep Learning, Computer Vision, NLP, DSA, Database Systems.</li>
+              <li>Led and contributed to multiple end-to-end project builds — from problem framing to demo-ready prototypes.</li>
+              <li>Active participant in technical seminars, paper presentations, and department-level competitions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+       
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="experience-card">
+            <div class="experience-head">
+              <div>
+                <h3>Higher Secondary — Computer Science (Class XII)</h3>
+                <p class="experience-org"><i class="fa-solid fa-school"></i> ISC</p>
+              </div>
+              <span class="experience-date mono">2023</span>
+            </div>
+            <ul class="experience-list">
+              <li>Scored <strong>89%</strong> in Higher Secondary examinations.</li>
+              <li>Specialized in Computer Science, building an early foundation in programming and logic.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="section" id="experience">
+    <h2 class="section-title fade-in">Experience</h2>
+    <div class="experience-timeline">
+
+        <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="experience-card">
+            <div class="experience-head">
+              <div>
+                <h3>Data Science Intern</h3>
+                <p class="experience-org"><i class="fa-solid fa-building"></i> Techvolt Softwares Pvt. Limited</p>
+              </div>
+              <span class="experience-date mono">2025</span>
+            </div>
+            <ul class="experience-list">
+              <li>Worked on real-world data pipelines — cleaning, feature engineering, and building predictive models on structured datasets.</li>
+              <li>Wrote Python scripts to automate repetitive data processing tasks, reducing manual effort significantly.</li>
+              <li>Delivered a working ML proof-of-concept within a tight timeline, collaborating with a small team.</li>
+              <li>Translated technical outcomes into clear business insights for stakeholder presentations.</li>
+            </ul>
+            <div class="project-tags" style="margin-top:14px;">
+              <span>Python</span><span>Pandas</span><span>scikit-learn</span><span>Data Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="section section-alt" id="projects">
+    <h2 class="section-title fade-in">Projects</h2>
+    <p class="projects-sub fade-in">Real systems built end-to-end — not just notebooks.</p>
+
+    <div class="projects-grid">
+
+      <article class="project-card fade-in">
+       <div class="project-card-top">
+       <i class="fa-solid fa-database"></i>
+       <span class="project-status mono status-progress">88% complete</span>
+    </div>
+         <h3>RAG-Based Document Q&amp;A System</h3>
+         <p>A retrieval-augmented generation pipeline that ingests company documents, splits them into chunks, and embeds them into a ChromaDB vector store. Supports history-aware conversational Q&amp;A by rewriting follow-up questions using chat context before retrieving relevant passages and generating grounded answers with a Llama-3.1-8B model.</p>
+         <div class="project-highlight"><i class="fa-solid fa-bolt"></i><span>History-aware retrieval with conversational context</span></div>
+         <div class="project-tags"><span>Python</span><span>LangChain</span><span>ChromaDB</span><span>HuggingFace</span><span>Llama 3.1</span></div>
+          <a href="https://github.com/ksrohini/RAG-Based-Document-Q-A-System" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fa-brands fa-github"></i> View on GitHub
+       </a>
+      </article>
+
+      <article class="project-card fade-in">
+        <div class="project-card-top">
+          <i class="fa-solid fa-file-shield"></i>
+          <span class="project-status mono status-shipped">shipped</span>
+        </div>
+        <h3>Multilingual Document Authentication System</h3>
+        <p>Detects forged identity documents (Aadhaar, PAN cards) by combining OCR text extraction with YOLO-based tamper localization. Generates ELA score, noise-level metric, and authenticity verdict via FastAPI.</p>
+        <div class="project-highlight"><i class="fa-solid fa-bolt"></i><span>&gt;90% forgery detection accuracy on test documents</span></div>
+        <div class="project-tags"><span>Python</span><span>OCR</span><span>YOLO</span><span>FastAPI</span><span>ELA</span></div>
+        <a href="https://github.com/ksrohini" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </article>
+
+      <article class="project-card fade-in">
+        <div class="project-card-top">
+          <i class="fa-solid fa-car-on"></i>
+          <span class="project-status mono status-progress">80% complete</span>
+        </div>
+        <h3>AI-Based Speed Regulation in EVs</h3>
+        <p>Real-time speed-regulation system for electric vehicles using OpenCV. Detects obstacles and estimates distance frame-by-frame to dynamically throttle speed, reducing collision risk in dense traffic.</p>
+        <div class="project-highlight"><i class="fa-solid fa-bolt"></i><span>Processes live video at 24 fps on standard hardware</span></div>
+        <div class="project-tags"><span>Python</span><span>OpenCV</span><span>Object Detection</span><span>Real-time</span></div>
+        <a href="https://github.com/ksrohini/AI-Based-Speed-Regulation-System-for-Enhanced-Road-Safety-in-Adverse-Conditions-" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </article>
+
+      <article class="project-card fade-in">
+        <div class="project-card-top">
+          <i class="fa-solid fa-waveform-lines"></i>
+          <span class="project-status mono status-progress">90% complete</span>
+        </div>
+        <h3>Who Spoke When? — Speech Diarization</h3>
+        <p>Extracts MFCC features from multi-speaker audio recordings and applies k-means clustering to segment audio and identify distinct speakers without prior training data.</p>
+        <div class="project-highlight"><i class="fa-solid fa-bolt"></i><span>Unsupervised — no labelled data required</span></div>
+        <div class="project-tags"><span>Python</span><span>Audio ML</span><span>MFCC</span><span>k-means</span></div>
+        <a href="https://github.com/ksrohini/Speech-diarization-" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+      </article>
+
+     
+
+    </div>
+  </section>
+
+  <!-- ================= ACHIEVEMENTS & CERTIFICATIONS ================= -->
+  <section class="section" id="achievements">
+    <h2 class="section-title fade-in">Achievements &amp; Certifications</h2>
+    <div class="achievements-columns">
+
+      <div class="fade-in">
+        <p class="achievements-col-title mono">// certifications</p>
+        <ul class="achievements-list">
+          <li>
+            <i class="fa-solid fa-certificate"></i>
+            <div><p>Web Development</p><span>Corizo learning platform</span></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-certificate"></i>
+            <div><p>Exploratory data analysis</p><span>Scalar</span></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-certificate"></i>
+            <div><p>National Workshop on full-stack development</p><span>CIT, Coimbatore</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="fade-in">
+        <p class="achievements-col-title mono">// academic highlights</p>
+        <ul class="achievements-list">
+           <li>
+            <i class="fa-solid fa-trophy"></i>
+            <div><p>CGPA 8.92 / 10 — consistent  performer</p><span>Dr. Mahalingam College of Engineering &amp; Technology</span></div>
+          </li>
+           <li>
+            <i class="fa-solid fa-award"></i>
+            <div><p>Top 50 of TANCAM's Hackathon 2025 </p><span>Presented research on document authentication using deep learning</span></div>
+          </li>
+         
+          <li>
+            <i class="fa-solid fa-award"></i>
+            <div><p>First in Mindrix 2026 - Technical Symposium</p><span>Presented research on document authentication using deep learning</span></div>
+          </li>
+          
+          <li>
+            <i class="fa-solid fa-users"></i>
+            <div><p>Documentation Incharge</p><span>INVICTUS -Department Association of AI&DS , 2024-2025 </span></div>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="fade-in">
+        <p class="achievements-col-title mono">// strengths</p>
+        <ul class="achievements-list">
+          <li>
+            <i class="fa-solid fa-comments"></i>
+            <div><p>Clear Technical Communication</p><span>Comfortable presenting demos, writing docs, and explaining ML to non-technical stakeholders</span></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <div><p>Problem Decomposition</p><span>Naturally breaks large ambiguous tasks into concrete, testable steps</span></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <div><p>Fast Learner</p><span>Picked up YOLO, Tesseract, and FastAPI for a project with no prior experience — within one sprint</span></div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= RESUME ================= -->
+  <section class="section section-alt resume-section" id="resume">
+    <h2 class="section-title fade-in">Resume</h2>
+    <p class="resume-copy fade-in">
+      Prefer the full picture? Grab a copy of my resume — education, internship, certifications, and achievements included.
+    </p>
+    <div class="resume-actions fade-in">
+      <a href="resume.pdf" download class="btn btn-primary">
+        <i class="fa-solid fa-download"></i> Download Resume (PDF)
+      </a>
+      <a href="resume.pdf" target="_blank" class="btn btn-outline">
+        <i class="fa-solid fa-eye"></i> Preview Online
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section contact-section" id="contact">
+    <h2 class="section-title fade-in">Get In Touch</h2>
+    <p class="contact-copy fade-in">
+      Open to Software Engineering roles, internships, and interesting collaborations.
+      I reply to every message — usually within 24 hours.
+    </p>
+    <div class="contact-grid fade-in">
+      <a href="mailto:hanirohini06@gmail.com" class="contact-card" id="emailCard">
+        <i class="fa-solid fa-envelope"></i>
+        <span>hanirohini06@gmail.com</span>
+        <span class="contact-hint">click to copy email</span>
+      </a>
+      <a href="https://www.linkedin.com/in/rohiniks" target="_blank" rel="noopener" class="contact-card">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>linkedin.com/in/rohiniks</span>
+        <span class="contact-hint">open LinkedIn</span>
+      </a>
+      <a href="https://github.com/HANI006-23" target="_blank" rel="noopener" class="contact-card">
+        <i class="fa-brands fa-github"></i>
+        <span>github.com/HANI006-23</span>
+        <span class="contact-hint">view projects</span>
+      </a>
+    </div>
+    <div class="cta-nudge fade-in">
+      <p class="mono cta-nudge-text">
+        <span class="t-prompt"></span>  Let's build something together.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Rohini K S &nbsp;·&nbsp; Built with HTML, CSS &amp; JavaScript &nbsp;·&nbsp;
+      <a href="mailto:hanirohini06@gmail.com" class="footer-link">hanirohini06@gmail.com</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
